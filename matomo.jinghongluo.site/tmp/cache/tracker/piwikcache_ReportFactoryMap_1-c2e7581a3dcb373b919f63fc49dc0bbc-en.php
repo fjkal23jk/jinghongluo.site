@@ -1,5 +1,5 @@
 <?php return array (
-  'lifetime' => 1597017908,
+  'lifetime' => 1597023549,
   'data' => 
   array (
     'Live.GetLastVisits' => 'Piwik\\Plugins\\Live\\Reports\\GetLastVisits',

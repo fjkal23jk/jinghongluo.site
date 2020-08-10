@@ -1,9 +1,9 @@
 <?php return array (
-  'lifetime' => 1597017418,
+  'lifetime' => 1597077909,
   'data' => 
   array (
     'isBrowserTriggerEnabled' => true,
-    'lastTrackerCronRun' => false,
+    'lastTrackerCronRun' => '1597075847',
     'ArchiveInvalidator.rememberToInvalidate' => 
     array (
     ),

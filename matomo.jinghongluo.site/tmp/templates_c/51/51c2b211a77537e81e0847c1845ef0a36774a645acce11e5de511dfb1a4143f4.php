@@ -1,0 +1,153 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* @CoreHome/getPromoVideo.twig */
+class __TwigTemplate_ac91ecfe21cc2d222624bd95765e312b3c490793ac4c89910edd93914ffa69de extends \Twig\Template
+{
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        // line 1
+        echo "<div id=\"piwik-promo\">
+    <a id=\"piwik-promo-videos-link\" href=\"";
+        // line 2
+        echo \Piwik\piwik_escape_filter($this->env, ($context["promoVideoUrl"] ?? $this->getContext($context, "promoVideoUrl")), "html_attr");
+        echo "\" rel=\"noreferrer noopener\" target=\"_blank\">
+        <div id=\"piwik-promo-video\">
+            <div id=\"piwik-promo-thumbnail\">
+                <img src=\"plugins/CoreHome/images/promo_video_splash.jpg\"/>
+            </div>
+        </div>
+
+        <span>";
+        // line 9
+        echo \Piwik\piwik_escape_filter($this->env, call_user_func_array($this->env->getFilter('translate')->getCallable(), ["CoreHome_ViewAllPiwikVideoTutorials"]), "html", null, true);
+        echo "</span>
+    </a>
+
+    <div id=\"piwik-promo-share\">
+        <span>";
+        // line 13
+        echo \Piwik\piwik_escape_filter($this->env, call_user_func_array($this->env->getFilter('translate')->getCallable(), ["CoreHome_ShareThis"]), "html", null, true);
+        echo ":</span>
+
+        ";
+        // line 16
+        echo "        <a href=\"https://www.facebook.com/sharer.php?u=";
+        echo \Piwik\piwik_escape_filter($this->env, twig_urlencode_filter(($context["promoVideoUrl"] ?? $this->getContext($context, "promoVideoUrl"))), "html", null, true);
+        echo "\" rel=\"noreferrer noopener\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/icons/dist/socials/facebook.com.png\" width=\"16px\" height=\"16px\" />
+        </a>
+
+        ";
+        // line 21
+        echo "        <a href=\"https://twitter.com/share?text=";
+        echo \Piwik\piwik_escape_filter($this->env, twig_urlencode_filter(($context["shareText"] ?? $this->getContext($context, "shareText"))), "html", null, true);
+        echo "&url=";
+        echo \Piwik\piwik_escape_filter($this->env, twig_urlencode_filter(($context["promoVideoUrl"] ?? $this->getContext($context, "promoVideoUrl"))), "html", null, true);
+        echo "\" rel=\"noreferrer noopener\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/icons/dist/socials/twitter.com.png\" width=\"16px\" height=\"16px\" />
+        </a>
+
+        ";
+        // line 26
+        echo "        <a href=\"mailto:?body=";
+        echo \Piwik\piwik_escape_filter($this->env, twig_urlencode_filter(($context["shareTextLong"] ?? $this->getContext($context, "shareTextLong")), true), "html", null, true);
+        echo "&subject=";
+        echo \Piwik\piwik_escape_filter($this->env, twig_urlencode_filter(($context["shareText"] ?? $this->getContext($context, "shareText")), true), "html", null, true);
+        echo "\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/images/email.png\" />
+        </a>
+    </div>
+
+    <div style=\"clear:both;\"></div>
+
+    <div id=\"piwik-widget-footer\" style=\"color:#666;\">";
+        // line 33
+        echo \Piwik\piwik_escape_filter($this->env, call_user_func_array($this->env->getFilter('translate')->getCallable(), ["CoreHome_CloseWidgetDirections"]), "html", null, true);
+        echo "</div>
+</div>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "@CoreHome/getPromoVideo.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  86 => 33,  73 => 26,  63 => 21,  55 => 16,  50 => 13,  43 => 9,  33 => 2,  30 => 1,);
+    }
+
+    /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return $this->getSourceContext()->getCode();
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("<div id=\"piwik-promo\">
+    <a id=\"piwik-promo-videos-link\" href=\"{{ promoVideoUrl|e('html_attr') }}\" rel=\"noreferrer noopener\" target=\"_blank\">
+        <div id=\"piwik-promo-video\">
+            <div id=\"piwik-promo-thumbnail\">
+                <img src=\"plugins/CoreHome/images/promo_video_splash.jpg\"/>
+            </div>
+        </div>
+
+        <span>{{ 'CoreHome_ViewAllPiwikVideoTutorials'|translate }}</span>
+    </a>
+
+    <div id=\"piwik-promo-share\">
+        <span>{{ 'CoreHome_ShareThis'|translate }}:</span>
+
+        {# facebook #}
+        <a href=\"https://www.facebook.com/sharer.php?u={{ promoVideoUrl|url_encode }}\" rel=\"noreferrer noopener\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/icons/dist/socials/facebook.com.png\" width=\"16px\" height=\"16px\" />
+        </a>
+
+        {# twitter #}
+        <a href=\"https://twitter.com/share?text={{ shareText|url_encode }}&url={{ promoVideoUrl|url_encode }}\" rel=\"noreferrer noopener\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/icons/dist/socials/twitter.com.png\" width=\"16px\" height=\"16px\" />
+        </a>
+
+        {# email #}
+        <a href=\"mailto:?body={{ shareTextLong|url_encode(true) }}&subject={{ shareText|url_encode(true) }}\" target=\"_blank\">
+            <img src=\"plugins/Morpheus/images/email.png\" />
+        </a>
+    </div>
+
+    <div style=\"clear:both;\"></div>
+
+    <div id=\"piwik-widget-footer\" style=\"color:#666;\">{{ 'CoreHome_CloseWidgetDirections'|translate }}</div>
+</div>
+", "@CoreHome/getPromoVideo.twig", "/var/www/matomo.jinghongluo.site/plugins/CoreHome/templates/getPromoVideo.twig");
+    }
+}
