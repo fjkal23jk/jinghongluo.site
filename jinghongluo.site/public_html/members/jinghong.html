@@ -2,27 +2,320 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSE 135 HW Lives!</title>
-  <link href="../images/favicon.ico" rel="icon" />
-  <style>
+    <meta charset="utf-8" />
+    <meta name="description" content="Simple about me page for CSE135" />
+    <meta name="keywords" content="HTML" />
+    <meta name="author" content="Jinghong Luo" />
+    <meta name="viewport" content="width=device-width">
+    <title>CSE135 About Me</title>
+    <link href="../images/favicon.ico" rel="icon" />
+      <style>
+        *{
+          margin: 0;
+        }
+        body, html{
+          margin: 0 5px;
+        }
+        #header > h1{
+          font-size: 55px;
+        }
+        :root {
+          --main-bg-color: rgb(241,250,238);
+        }
+        body, html{
+          background-color: var(--main-bg-color);
+          height: 100%;
+        }
+        #header{
+          background-image: url("../images/banner.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+          text-align: center;
+        }
+        footer{
+          text-align: center;
+        }
+        a{
+          font: bold 11px Arial;
+          text-decoration: none;
+          background-color: #EEEEEE;
+          color: #333333;
+          padding: 3px 9px 3px 9px;
+          border-top: 3px solid #CCCCCC;
+          border-right: 3px solid #333333;
+          border-bottom: 3px solid #333333;
+          border-left: 3px solid #CCCCCC;
+        }
+        a:hover{
+          background-color: rgb(155, 153, 153);
+        }
+        #intro{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas: 
+              "a a a a a"
+              "b b . c c"
+              ". . d d ."
+          ;
+        }
 
-  </style>
+
+        #intro pre{
+          border: 1px solid grey;
+          text-align: center;
+          grid-area: a;
+        }
+        #intro details{
+          border: 1px solid grey;
+          grid-area: b;
+        }
+        #intro aside{
+          border: 1px solid grey;
+          grid-area: c
+        }
+        #something-about{
+          grid-area: d;
+          transform: rotate(5deg);
+          animation-name: colorChange;
+          animation-duration: 4s;
+        }
+
+        @keyframes colorChange {
+          from {color: white;}
+          to {color: black;}
+        }
+
+        #random-things ul{
+          margin: 0 -10px;
+          padding: 0;
+          list-style: none;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 10px;
+          row-gap: 10px;
+        }
+
+
+        #random-things li{
+          margin: auto;
+          background-color: lightblue;
+          border: 1px solid grey;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        #favorite-food ul{
+          padding: 0;
+          list-style: none;
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+          row-gap: 10px;
+        }
+
+        #favorite-food li{
+          width: 20vw;
+          margin: auto;
+          background-color: lightblue;
+          border: 1px solid grey;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        #survey{
+          background-color: aliceblue;
+        }
+
+        input[type=text], input[type=email]{
+          width: 100px;
+          transition: width 1s;
+          transition-timing-function: ease;
+        }
+        input[type=text]:focus, input[type=email]:focus{
+          width: 150px;
+        }
+
+        figcaption{
+          font-size: 20px;
+        }
+
+        #productions{
+        display: flex;
+        }
+        #tape{
+          flex: 2 0 auto;
+        }
+        #place-frame{
+          flex: 1 0 auto;
+        }
+
+
+        #form_update{
+          visibility: hidden; 
+          min-width: 250px; 
+          margin-left: -125px; 
+          background-color: rgb(91, 86, 86); 
+          color: #fff;
+          text-align: center; 
+          border-radius: 2px; 
+          padding: 10px; 
+          position: fixed;
+          z-index: 1; 
+          left: 50%; 
+          bottom: 30px; 
+        }
+
+        #form_update.show{
+          visibility: visible; 
+          -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+          animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+          from {bottom: 0; opacity: 0;}
+          to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadein {
+          from {bottom: 0; opacity: 0;}
+          to {bottom: 30px; opacity: 1;}
+        }
+          
+        @-webkit-keyframes fadeout {
+          from {bottom: 30px; opacity: 1;}
+          to {bottom: 0; opacity: 0;}
+        }
+          
+        @keyframes fadeout {
+          from {bottom: 30px; opacity: 1;}
+          to {bottom: 0; opacity: 0;}
+        }
+      </style>
+
 </head>
 
 <body>
-  <header>
-    <h1>JINGHONG LUO</h1>
-  </header>
-  <main>
-    
-  </main>
+	<header>
+        <div id="header">
+            <br />
+            <h1><strong><em>About Me</em></strong></h1>
+            <br />
+            <a href="../index.html">Home Page</a>
+            <br /><br />
+            <hr />
+        </div>
+    </header>
 
-  <footer>
-    <hr/>
+	<main>
+        <br/>
+        <div id="intro">
+            <pre>
+Hi, my name is Jinghong Luo. 
+I am an upcoming third year 
+CSE student.
+            </pre>
+
+            <details>
+                <summary><code>Details</code></summary>
+                <code>I go to Univerisity of California, San Diego.</code>
+            </details>
+            
+            <aside>
+                <p><code>(P.S. There is a little survery to fill out at the bottom, if you do not mind.)</code></p>
+            </aside>
+
+            <template>
+                <p>Mystery message to be displayed in the future using JS.</p>
+            </template>
+
+            <h1 id="something-about">Something About Me</h1>
+        </div>
+        <section id="things-about-me">
+            <h2><code>Little Things About Me</code></h2>
+            <section id="random-things">
+                <h3>List:</h3>
+			    <ul>
+				    <li>I can speak Mandarin, Cantanese, and Chinese</li>
+				    <li>I love LEGO, espically the Creator Expert sets</li>
+				    <li>I am into web and mobile application development</li>
+                </ul>
+            </section>
+            <h2><code>Favorite Food Ranking</code></h2>
+            <section id="favorite-food">
+                <h3>List (in order):</h3>
+                <ol>
+                    <li>Wagyu Ribeye Steak</li>
+                    <li>Sushi</li>
+                    <li>Beef Tataki</li>
+                </ol>
+            </section>
+
+            <div id="productions">
+            <figure id="tape">
+                <figcaption><code><b>A self-produced mix-tape by me:</b></code></figcaption>
+                <audio controls src="../audio/Soundscape.mp3">Your browser does not support the
+                    <code>audio</code> element.</audio>
+            </figure>
+
+            <section id="place-frame">
+                <h3><code>A preview of my favorite place to be:</code></h3>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6b-681VbMmM" title="My Favorite Place to be in" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+            </div>
+        </section>
+
+        <form id="form">
+            <fieldset id="survey">
+                <legend>Optional Survey</legend>
+                <label for="name">Enter Your Name:</label>
+                <input type="text" name="name" id="name" >
+                <br /> <br />
+                <label for="email">Enter Your Email:</label>
+                <input type="email" name="email" id="email" required>
+                <br /> <br />
+                <label for="feedback">Enter Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="5" cols="33"  >
+                </textarea>
+                <br /> <br />
+                <label for="browser-type">Choose your browser from the list:</label>
+                <input list="browsers" name="browser-type" id="browser-type">
+                <datalist id="browsers">
+                    <option value="Chrorme">
+                    <option value="Edge">
+                    <option value="Safari">
+                    <option value="Firefox">
+                </datalist>
+                <br /> <br />
+                <label for="grade-select">Choose Your Grade Level:</label>
+                <select id="grade-select">
+                    <optgroup label="Undergraduate">
+                        <option value="">--Please choose an option--</option>
+                        <option value="first">1st Year</option>
+                        <option value="second">2nd Year</option>
+                        <option value="third">3rd Year</option>
+                        <option value="fourth">4th Year</option>
+                    </optgroup>
+                    <optgroup label="Graduate">
+                        <option value="graduate">Master</option>
+                        <option value="doctor">PhD</option>
+                    </optgroup>
+                </select>
+                <br /> <br />
+                <button id="submit" type="button">Submit</button>
+            </fieldset>
+        </form>
+        <div id="form_update"></div>
+
+
+
+	</main>
+
+	<footer>
+		<hr/>
 		<p>💯This page was made with &hearts; by Jinghong Luo💯</p>
   </footer>
+  <script src="../src/index.js"></script>
 </body>
 
 </html>
